@@ -55,8 +55,7 @@ int main(void) {
 	
       // Check for keystrokes
       case KeyPress:
-	if (XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("D")), Mod4Mask,
-	    DefaultRootWindow(disp), True, GrabModeAsync, GrabModeAsync)) system("dmenu_run");
+        // Coming from keybinds.h, remember: call the loadKeyBinds() functions
 	break;
     }
   }
