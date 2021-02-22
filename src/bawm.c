@@ -9,7 +9,7 @@ int main(void) {
   Display* disp;
 
   // Create window attributes
-  XWindowAttrbutes attrib;
+  XWindowAttributes attrib;
 
   // Create a Button event
   XButtonEvent butt; // Trying to make things shorter...
@@ -27,6 +27,29 @@ int main(void) {
   }
 
   // Set root window to Win + R (Super + R) [for root]
-  XGrabKey(disp, XKeysymToKeycode(disp, XKStringToKeysym("R")), Mod4Mask,
-	  DefaultRootWindow(display), True, GrabModeAsync, GrabModeAsync);
+  XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("R")), Mod4Mask,
+	  DefaultRootWindow(disp), True, GrabModeAsync, GrabModeAsync);
+
+
+
+  // Grab Mouse (Left & Right) Inputs
+
+  // Left
+  XGrabButton(disp, 1, Mod4Mask, DefaultRootWindow(disp), True,
+	      ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync,
+	      GrabModeAsync, None, None);
+
+  // Right
+  XGrabButton(disp, 3, Mod4Mask, DefaultRootWindow(disp), True,
+	      ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync,
+	      GrabModeAsync, None, None);
+
+  start.subwindow = None;
+
+  // Event loop
+  for (;;) {
+    // Loop through X commands
+    XNextEvent(disp, &event);
+  }
+
 }
