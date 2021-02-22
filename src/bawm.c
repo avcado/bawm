@@ -51,7 +51,17 @@ int main(void) {
   for (;;) {
     // Loop through X commands
     XNextEvent(disp, &event);
-    
+    switch (event.type){
+	
+      // Check for keystrokes
+      case KeyPress:
+	if (XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("D")), Mod4Mask,
+	    DefaultRootWindow(disp), True, GrabModeAsync, GrabModeAsync)) system("dmenu_run");
+	break;
+    }
   }
+
+  // Close display
+  XCloseDisplay(disp);
 
 }
