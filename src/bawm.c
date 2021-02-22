@@ -29,16 +29,6 @@ int main(void) {
     return 1;
   }
 
-  // This is how we're going to be able to load in for
-  // Xephyr.
-
-  // NOTE: This is extremely hacky, and I don't suggest using
-  // it for releases later on.
-  if (!(disp = XOpenDisplay(":1"))){
-    fprintf(stderr, "Can't open display on :1!\n");
-    return 2;
-  }
-
   // Set root window to Win + R (Super + R) [for root]
   XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("R")), Mod4Mask,
 	  DefaultRootWindow(disp), True, GrabModeAsync, GrabModeAsync);
