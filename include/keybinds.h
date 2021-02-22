@@ -29,6 +29,16 @@ void alacrittyrun(Display* disp) {
         }
 }
 
+// Another example if you'd like it
+// running dmenu with Mod + D
+void dmenurun(Display* disp){
+    if (XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("D")),
+        mod, DefaultRootWindow(disp), True, GrabModeAsync,
+        GrabModeAsync)){
+            // Run it
+            system("dmenu_run");
+        }
+}
 
 // Add your keybinds here.
 // Check the examples before adding keybinds
