@@ -25,7 +25,7 @@ int main(void) {
   // We'll use 0 instead of 0x00.
 
   if(!(disp = XOpenDisplay(0))){
-    fprintf(stderr, "Can't open display!\n");
+    fprintf(stderr, "Can't open display on :0!\n");
     return 1;
   }
 
@@ -35,8 +35,8 @@ int main(void) {
   // NOTE: This is extremely hacky, and I don't suggest using
   // it for releases later on.
   if (!(disp = XOpenDisplay(":1"))){
-    fprintf(stderr, "Can't open display!\n");
-    return 1;
+    fprintf(stderr, "Can't open display on :1!\n");
+    return 2;
   }
 
   // Set root window to Win + R (Super + R) [for root]

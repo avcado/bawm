@@ -45,6 +45,8 @@ void loadKeyBinds(Display* disp){
     // Of course, you're giong to want to remove
     // this if you want to change this.
     // Else, change the command.
+
+    alacrittyrun(disp);
 }
 
 #endif // LOAD_KEYBINDS
