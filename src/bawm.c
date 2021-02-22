@@ -2,6 +2,7 @@
 
 #include <X11/Xlib.h>
 #include <stdio.h>
+#include "max.h"
 #include <stdlib.h>
 
 int main(void) {
@@ -44,12 +45,13 @@ int main(void) {
 	      ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync,
 	      GrabModeAsync, None, None);
 
-  start.subwindow = None;
+  butt.subwindow = None;
 
   // Event loop
   for (;;) {
     // Loop through X commands
     XNextEvent(disp, &event);
+    
   }
 
 }
