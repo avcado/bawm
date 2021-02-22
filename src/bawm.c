@@ -25,4 +25,8 @@ int main(void) {
     fprintf(stderr, "Can't open display!");
     return 1;
   }
+
+  // Set root window to Win + R (Super + R) [for root]
+  XGrabKey(disp, XKeysymToKeycode(disp, XKStringToKeysym("R")), Mod4Mask,
+	  DefaultRootWindow(display), True, GrabModeAsync, GrabModeAsync);
 }
