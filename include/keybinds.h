@@ -1,4 +1,4 @@
-/* Keybindings for BAWM */
+
 
 #pragma once
 #include <X11/Xlib.h>
@@ -50,13 +50,11 @@ void dmenurun(Display* disp){
 #define LOAD_KEYBINDS
 
 void loadKeyBinds(Display* disp){
-    // This is an example of running alacritty
-    // with super + t
-    // Of course, you're giong to want to remove
-    // this if you want to change this.
-    // Else, change the command.
-
+    // This is an example of running multiple
+    // Key handlers.
+    
     alacrittyrun(disp);
+    dmenurun(disp);
 }
 
 #endif // LOAD_KEYBINDS

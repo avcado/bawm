@@ -61,7 +61,8 @@ int main(void) {
         loadKeyBinds(disp);
 	      break;
       default:
-        printf("No keybind gotten\n");
+        system("notify-send 'aisgu'");
+	printf("No keybind gotten\n");
         break;
     }
   }
