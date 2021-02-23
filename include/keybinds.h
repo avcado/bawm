@@ -25,7 +25,7 @@ void loadKeyBinds(Display* disp){
         GrabModeAsync)){
             // Run dmenu with system();
             // Probably bad practice..
-            system("dmenu");
+            system("dmenu_run");
     }
 }
 
