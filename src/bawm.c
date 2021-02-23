@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #include "max.h"
-#include "keybinds.h"
+#include "keyloader.h"
 
 int main(void) {
   // Create a display object
@@ -60,9 +60,10 @@ int main(void) {
         // Coming from keybinds.h, remember: call the loadKeyBinds() function
         loadKeyBinds(disp);
 	      break;
+      
       default:
-        system("notify-send 'aisgu'");
-	printf("No keybind gotten\n");
+        // Pretty much useless information.
+        printf("No keybind gotten\n");
         break;
     }
   }
