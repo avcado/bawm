@@ -19,8 +19,14 @@ unsigned int mod = Mod4Mask; // Change this to your
 
 void loadKeyBinds(Display* disp){
     // This is an example of running multiple
-    // Key handlers.
-    
+    // key handlers.
+    if (XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("D")), mod,
+        DefaultRootWindow(disp), True, GrabModeAsync,
+        GrabModeAsync)){
+            // Run dmenu with system();
+            // Probably bad practice..
+            system("dmenu");
+    }
 }
 
 #endif // KEYBINDS
