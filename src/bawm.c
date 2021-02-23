@@ -23,11 +23,14 @@ int main(void) {
   // Try to open the display,
   // If I can't, then we want to exit
   // We'll use 0 instead of 0x00.
+  // We're also adding support for :1
+  // so that I can run bawm without
+  // having to go into tty.
 
-  if(!(disp = XOpenDisplay(0))){
+  if(!(disp = XOpenDisplay(0)) && !(disp = XOpenDisplay(":1"))){
     fprintf(stderr, "Can't open display on :0!\n");
     return 1;
-  }
+  } else;
 
   // Set root window to Win + R (Super + R) [for root]
   XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("R")), Mod4Mask,
