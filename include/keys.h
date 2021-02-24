@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "findwindow.h"
 
 #ifndef KEYS
 #define KEYS
