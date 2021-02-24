@@ -1,7 +1,7 @@
 #pragma once
 #include <X11/Xlib.h>
 #include <stdlib.h>
-#include <stdio.h
+#include <stdio.h>
 
 #ifndef KEYS
 #define KEYS
