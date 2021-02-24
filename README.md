@@ -49,3 +49,14 @@ To run bawm in X11, do the following:
 - Make sure you've compiled bawm and installed it.
 - Make sure you've put `exec bawm` in your `~/.xinitrc`. 
 - Run `startx` 
+
+# Dependencies
+
+
+**For compiling:**
+- (May be removed) libxdo
+- libx11 (or, X11)
+
+**For running with default config:**
+- alacritty
+- dmenu
