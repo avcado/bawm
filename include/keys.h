@@ -22,8 +22,7 @@ void dmenurun(Display* disp){
 
 // If you're using a launcher like DMENU, use the example above,
 // else, follow this
-Window alacrun(Display* disp){
-    Window win;
+void alacrun(Display* disp){
     
     // Create the window, and make sure that it DOES exist
     // We're going to use Super + T for this, as wellas alacritty
@@ -36,12 +35,6 @@ Window alacrun(Display* disp){
             // Spawn the window
             system("alacritty"); // I'm gonna want to refactor this.
     }
-
-    // Now we're going to check if the window exists
-
-    // Move the window to the center of the screen.
-
-    return win;
 }
 
 #endif // KEYS
