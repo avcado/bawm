@@ -16,3 +16,13 @@ int getWidth(Display* disp){
 }
 
 #endif //WIDTH
+
+#ifndef HEIGHT
+#define HEIGHT
+
+int getHeight(Display* disp){
+    // same as before
+    return DisplayWidth(disp, DefaultScreen(disp));
+}
+
+#endif //HEIGHT
