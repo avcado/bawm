@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "findwindow.h"
+#include "dimensions.h"
 
 #ifndef KEYS
 #define KEYS
@@ -35,6 +36,8 @@ void alacrun(Display* disp){
             // Spawn the window
             system("alacritty"); // I'm gonna want to refactor this.
     }
+    // Now we will center the window
+    XMoveWindow(disp, NULL, (getWidth(disp) / 2), (getHeight(disp) / 2));
 }
 
 #endif // KEYS
