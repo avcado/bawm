@@ -1,16 +1,23 @@
 # bawm
 Minimalistic C Window Manager for the X11 Display Server
 
+# Is bawm in [insert distro]'s repo?
+
+## ***This is temporary, as I haven't added support with repology***
+
+- [X] Arch Linux
+- [ ] Gentoo
+- [ ] Ubuntu
+- [ ] Debian
+- [ ] Void
+- [ ] Solus
+- [ ] Fedora
+- [ ] RHEl
+
+
 # Compiling/Running
 
 ## Compiling
-
-### For Package Managers
-
-If you're a packager and want to package `bawm` for your distro, make sure that
-the binary from `bin/` is located in `/usr/local/bin/bawm` or `/usr/bin/bawm` (or `/bin/bawm`).
-
-### Other
 
 If you aren't a packager but want to run `bawm` on your desktop, do the following, but first read the advisory:
 
