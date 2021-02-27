@@ -54,9 +54,16 @@ To run bawm in X11, do the following:
 
 
 **For compiling:**
-- (May be removed) libxdo
 - libx11 (or, X11)
 
 **For running with default config:**
 - alacritty
 - dmenu
+
+# Community
+
+IRC? No
+
+Matrix? No
+
+Discord? [Yes!](https://discord.gg/gkj93pRtzK)
