@@ -49,26 +49,14 @@ int main(void) {
   XGrabButton(disp, 3, Mod4Mask, DefaultRootWindow(disp), True,
 	      ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync,
 	      GrabModeAsync, None, None);
-
+      
+  //:)
   butt.subwindow = None;
 
   // Event loop
   for (;;) {
     // Loop through X commands
     XNextEvent(disp, &event);
-    switch (event.type){
-	
-      // Check for keystrokes
-      case KeyPress:
-        // Coming from keybinds.h, remember: call the loadKeyBinds() function
-        loadKeyBinds(disp);
-	      break;
-      
-      default:
-        // Pretty much useless information.
-        printf("No keybind gotten\n");
-        break;
-    }
   }
 
   // Close display
