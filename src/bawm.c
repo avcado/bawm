@@ -57,6 +57,19 @@ int main(void) {
   for (;;) {
     // Loop through X commands
     XNextEvent(disp, &event);
+
+    switch (event.type){
+      case 2:
+        // Check if it's a subwindow
+        if (event.xkey.subwindow != None){
+          XRaiseWindow(disp, event.xkey.subwindow); // Raise window.
+        }
+        break;
+      default:
+        fprintf(stderr, "Can't handle event! Code: %d\n", event.type);
+        return 127;
+        break;
+    }
   }
 
   // Close display
