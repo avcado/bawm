@@ -27,11 +27,11 @@ If you're still wanting to run `bawm`, even with the advisory, do the following:
 
 Compile:
 ```sh
+$ autoreconf
+$ automake --add-missing
+$ ./configure
 $ make
-mkdir: created directory 'bin'
-Compiled!
 $ sudo make install
-'bin/bawm' -> '/usr/local/bin/bawm'
 ```
 
 Setup `startx` to run bawm:
