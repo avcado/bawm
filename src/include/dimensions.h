@@ -1,5 +1,5 @@
 /* Get the dimensions of the display
-and return then (X,Y) */
+and return them (X,Y) */
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <stdlib.h>
