@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "max.h"
-#include "keyloader.h"
+#include "include/max.h"
+#include "include/keyloader.h"
 
 int main(void) {
   // Create a display object
