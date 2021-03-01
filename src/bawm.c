@@ -59,6 +59,8 @@ int main(void) {
     XNextEvent(disp, &event);
 
     switch (event.type){
+      // Key press (or 2, since for some reason
+      // Events are integers.)
       case 2:
         // Check if it's a subwindow
         if (event.xkey.subwindow != None){
