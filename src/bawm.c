@@ -1,11 +1,8 @@
-// BAWM
-
 #include <X11/Xlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "include/max.h"
-#include "include/keyloader.h"
 
 int main(void) {
   // Create a display object
@@ -15,18 +12,12 @@ int main(void) {
   XWindowAttributes attrib;
 
   // Create a Button event
-  XButtonEvent butt; // Trying to make things shorter...
+  XButtonEvent butt;
 
   // Create an event for X events
   XEvent event;
 
-  // Try to open the display,
-  // If I can't, then we want to exit
-  // We'll use 0 instead of 0x00.
-  // We're also adding support for :1
-  // so that I can run bawm without
-  // having to go into tty.
-
+  // Open display.
   if(!(disp = XOpenDisplay(0)) && !(disp = XOpenDisplay(":1"))){
     fprintf(stderr, "Can't open display on :0!\n");
     return 1;
@@ -50,9 +41,7 @@ int main(void) {
 	      ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync,
 	      GrabModeAsync, None, None);
       
-  //:)
   butt.subwindow = None;
-
   // Event loop
   for (;;) {
     // Loop through X commands
@@ -92,14 +81,18 @@ int main(void) {
                             MAX(1, attrib.width + (butt.button==3 ? xDiff : 0)),
                             MAX(1, attrib.height + (butt.button==3 ? yDiff :0)));
         }
+      // The last needed event, I can add more
+      // if I need to, but I'm thinking
+      // this is the only one / last one
+      // for now
+      case 5:
+        // Just a simple instruction
+        butt.subwindow = None;
+        break;
       default:
         fprintf(stderr, "Can't handle event! Code: %d\n", event.type);
         return 127;
         break;
     }
   }
-
-  // Close display
-  XCloseDisplay(disp);
-
 }
