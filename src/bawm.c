@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "include/max.h"
+#include "include/checkForDisp.h"
 
 int main(void) {
   // Create a display object
@@ -17,17 +18,12 @@ int main(void) {
   // Create an event for X events
   XEvent event;
 
-  // Open display.
-  if(!(disp = XOpenDisplay(0)) && !(disp = XOpenDisplay(":1"))){
-    fprintf(stderr, "Can't open display on :0!\n");
-    return 1;
-  } else;
-
+  // Open displays (0 & 1)
+  defLoad("lmfao couldn't connect to the X server.", disp);
+  othLoad(":1", disp, "There is probably another window manager running, anyway, couldn't connect to X");
   // Set root window to Win + R (Super + R) [for root]
   XGrabKey(disp, XKeysymToKeycode(disp, XStringToKeysym("R")), Mod4Mask,
 	  DefaultRootWindow(disp), True, GrabModeAsync, GrabModeAsync);
-
-
 
   // Grab Mouse (Left & Right) Inputs
 
@@ -73,18 +69,12 @@ int main(void) {
 
           // Move/resize the window to where the
           // difference of both x&y
-
-          // NOTE TO SEF: this function is painful.
           XMoveResizeWindow(disp, butt.window,
                             attrib.x + (butt.button==1 ? xDiff : 0),
                             attrib.y + (butt.button==1 ? yDiff : 0),
                             MAX(1, attrib.width + (butt.button==3 ? xDiff : 0)),
                             MAX(1, attrib.height + (butt.button==3 ? yDiff :0)));
         }
-      // The last needed event, I can add more
-      // if I need to, but I'm thinking
-      // this is the only one / last one
-      // for now
       case 5:
         // Just a simple instruction
         butt.subwindow = None;
