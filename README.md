@@ -3,7 +3,7 @@ Minimalistic C Window Manager for the X11 Display Server
 
 # Is bawm in [insert distro]'s repo?
 
-## ***This is temporary, as I haven't added support with repology***
+#### ***This is temporary, as I haven't added support with repology***
 
 - [X] Arch Linux
 - [ ] Gentoo
@@ -12,7 +12,7 @@ Minimalistic C Window Manager for the X11 Display Server
 - [ ] Void
 - [ ] Solus
 - [ ] Fedora
-- [ ] RHEl
+- [ ] RHEL
 
 
 # Compiling/Running
@@ -31,7 +31,8 @@ $ autoreconf
 $ automake --add-missing
 $ ./configure
 $ make
-$ sudo make install
+$ sudo make install # A work in progress,
+# I think it'll be working by 0.3(?)
 ```
 
 Setup `startx` to run bawm:
@@ -71,12 +72,14 @@ To run bawm in X11, do the following:
 # Dependencies
 
 
+**If you do not want to install through your**
+**package manager, or are creating a packge, you need:**
+
 **For compiling:**
 - libx11 (or, X11)
+- gcc
+- autotools/automake
 
-**For running with default config:**
-- alacritty
-- dmenu
 
 # Community
 
