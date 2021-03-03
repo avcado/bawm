@@ -75,10 +75,8 @@ int main(void) {
                             MAX(1, attrib.width + (butt.button==3 ? xDiff : 0)),
                             MAX(1, attrib.height + (butt.button==3 ? yDiff :0)));
         }
-      case 5:
-        // Just a simple instruction
-        butt.subwindow = None;
-        break;
+      case CreateNoitfy:
+        OnCreateNotify(event.xcreatewindow);
       default:
         fprintf(stderr, "Can't handle event! Code: %d\n", event.type);
         return 127;
