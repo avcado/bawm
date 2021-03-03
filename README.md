@@ -47,6 +47,17 @@ echo "exec bawm" >> ~/.xinitrc
 cat ~/.xinitrc # Sanity check
 ```
 
+If you want to start `bawm` from a display manager, put this in `bawm.desktop`:
+```
+[Desktop Entry]
+Type=Application
+Version=0.2
+Name=bawm
+Comment=The Worst Window Manager
+Path=[wherever you installed it]
+Exec=bawm
+```
+
 To run, see the section below.
 
 ## Running
