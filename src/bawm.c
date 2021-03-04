@@ -42,7 +42,6 @@ int main(void) {
   for (;;) {
     // Loop through X commands
     XNextEvent(disp, &event);
-
     switch (event.type){
       // Key press (or 2, since for some reason
       // Events are integers.)
@@ -75,8 +74,10 @@ int main(void) {
                             MAX(1, attrib.width + (butt.button==3 ? xDiff : 0)),
                             MAX(1, attrib.height + (butt.button==3 ? yDiff :0)));
         }
-      case CreateNoitfy:
-        OnCreateNotify(event.xcreatewindow);
+      case CreateNotify:
+        // Create...a...window...
+        CreateNotify(event.xcreatewindow);
+	break;
       default:
         fprintf(stderr, "Can't handle event! Code: %d\n", event.type);
         return 127;
